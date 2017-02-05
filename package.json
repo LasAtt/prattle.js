@@ -32,10 +32,12 @@
     "css-loader": "^0.26.1",
     "express": "^4.14.1",
     "file-loader": "^0.10.0",
+    "monk": "^3.1.4",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
     "socket.io": "^1.7.2",
+    "socket.io-client": "^1.7.2",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
   },

@@ -1,0 +1,11 @@
+textarea {
+  resize:none;
+}
+
+#chat {
+  margin-bottom: 0px;
+}
+
+#messageButton {
+  height: 54px;
+}

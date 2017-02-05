@@ -1,13 +1,12 @@
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import './css/styles.css';
 
 import React from 'react';
 import ReactDom from 'react-dom';
 
 import {Grid, Row, Col} from  'react-bootstrap';
 
-
-import AwesomeComponent from './AwesomeComponent.jsx';
-
+import Chat from './Chat.jsx';
 
 class App extends React.Component {
   render () {
@@ -16,10 +15,10 @@ class App extends React.Component {
         <Grid>
           <Row>
             <Col>
-              <h2>Hi React!</h2>
+              <h2>prattle.js</h2>
             </Col>
             <Col>
-              <AwesomeComponent />
+              <Chat />
             </Col>
           </Row>
         </Grid>
@@ -29,5 +28,5 @@ class App extends React.Component {
 }
 
 ReactDom.render(
-  <App/>,
+  <App />,
   document.getElementById('app'));
