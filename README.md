@@ -5,7 +5,7 @@ NodeJS webchat application. Current version is a basic websocketed chat with no 
 
 Technologies used
 -----------------
-* Api and routing done - **Express**
+* Api and routing - **Express**
 * MongoDB connection - **Monk**
 * Client - **ReactJS**
 * Client Styling **react-bootstrap**
