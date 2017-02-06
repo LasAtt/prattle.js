@@ -4,9 +4,7 @@ import cookie from 'react-cookie';
 
 import io from 'socket.io-client';
 
-let hostname = window.location.hostname;
-let pathname = window.location.pathname;
-let path = hostname + pathname;
+let path = window.location.protocol + '//' + window.location.host + window.location.pathname;
 console.log(path);
 let socket = io(path);
 
@@ -32,8 +30,7 @@ class Chat extends React.Component {
   }
 
   componentDidMount() {
-
-    fetch(path + '/api/messages/1').then((result) => {
+    fetch(path + 'api/messages/1').then((result) => {
       result.json().then((json) => {
         this.setState({messages: json});
         this.state.scrollarea.scrollBottom();
