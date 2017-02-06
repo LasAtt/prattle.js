@@ -4,8 +4,7 @@
   "description": "Quick and simple web-chat application implemented with React.",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js",
-    "stop": "pm2 stop index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack -d --watch",
     "build": "webpack -p"
