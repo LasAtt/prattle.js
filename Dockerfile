@@ -7,5 +7,7 @@ RUN	git clone https://github.com/serdion/prattle.js
 WORKDIR	prattle.js/
 RUN	npm install
 
+EXPOSE 3000
+
 CMD [ "npm", "build"]
 CMD	[ "npm", "start" ]
