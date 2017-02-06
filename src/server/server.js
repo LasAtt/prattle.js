@@ -2,9 +2,6 @@ var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-var cookieParser = require('cookie-parser');
-
-app.use(cookieParser);
 
 var path = require('path');
 
@@ -16,7 +13,6 @@ var buildPath = express.static(path.resolve(__dirname, '../client/public'));
 var indexPath = path.resolve(__dirname, '../client/index.html');
 
 app.use((req, res, next) => {
-  console.log(req);
   req.db = db
   next();
 });
