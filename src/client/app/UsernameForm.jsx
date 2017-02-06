@@ -7,7 +7,7 @@ class UsernameForm extends React.Component {
     super(props);
     this.state = {
       text: "",
-      showModal: false
+      showModal: true
     };
 
     this.reopenIfNotReady = this.reopenIfNotReady.bind(this);
