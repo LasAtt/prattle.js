@@ -6,7 +6,7 @@ import io from 'socket.io-client';
 
 let path = window.location.protocol + '//' + window.location.host + window.location.pathname;
 console.log(path);
-let socket = io(path, {path: window.location.path + 'socket.io'});
+let socket = io(path, {path: window.location.pathname + 'socket.io'});
 
 import {ListGroup, ListGroupItem} from 'react-bootstrap';
 import ScrollArea from 'react-scrollbar';
