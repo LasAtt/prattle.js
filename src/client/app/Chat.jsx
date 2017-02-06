@@ -3,7 +3,10 @@ import React from 'react';
 import cookie from 'react-cookie';
 
 import io from 'socket.io-client';
-let socket = io();
+
+let hostname = window.location.hostname;
+
+let socket = io(hostname);
 
 import {ListGroup, ListGroupItem} from 'react-bootstrap';
 import ScrollArea from 'react-scrollbar';
@@ -17,7 +20,7 @@ class Chat extends React.Component {
     super(props);
 
     this.state = {
-      username: '',
+      username: null,
       messages: [],
     };
 
@@ -27,7 +30,8 @@ class Chat extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/messages/1').then((result) => {
+
+    fetch(hostname + '/api/messages/1').then((result) => {
       result.json().then((json) => {
         this.setState({messages: json});
         this.state.scrollarea.scrollBottom();
