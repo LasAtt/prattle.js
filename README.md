@@ -8,5 +8,5 @@ Technologies used
 * Api and routing - **Express**
 * MongoDB connection - **Monk**
 * Client - **ReactJS**
-* Client Styling **react-bootstrap**
+* Client Styling **react-bootstrap**, **react-scrollbar**
 * Websockets - **Socket.io**
