@@ -5,7 +5,7 @@ import cookie from 'react-cookie';
 import io from 'socket.io-client';
 
 let hostname = window.location.hostname;
-
+console.log(hostname);
 let socket = io(hostname);
 
 import {ListGroup, ListGroupItem} from 'react-bootstrap';
