@@ -5,8 +5,8 @@ import cookie from 'react-cookie';
 import io from 'socket.io-client';
 
 let hostname = window.location.hostname;
-console.log(hostname);
-let socket = io(hostname);
+let path = window.location.pathname;
+let socket = io(hostname + pathname);
 
 import {ListGroup, ListGroupItem} from 'react-bootstrap';
 import ScrollArea from 'react-scrollbar';
@@ -31,7 +31,7 @@ class Chat extends React.Component {
 
   componentDidMount() {
 
-    fetch(hostname + '/api/messages/1').then((result) => {
+    fetch(hostname + pathname + '/api/messages/1').then((result) => {
       result.json().then((json) => {
         this.setState({messages: json});
         this.state.scrollarea.scrollBottom();
