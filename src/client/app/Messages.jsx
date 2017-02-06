@@ -14,7 +14,6 @@ class Messages extends React.Component {
   componentDidMount() {
     fetch('/api/messages/1').then((result) => {
       result.json().then((json) => {
-        console.log(json);
         this.setState({messages: json});
       });
     });
@@ -23,10 +22,8 @@ class Messages extends React.Component {
   render() {
     return (
       <ListGroup id="chat">
-        {console.log(this.state.messages)}
         {
           this.state.messages.map((message) => {
-            console.log(message);
             return (
               <ListGroupItem key={message._id}>
                 <b>{message.username}</b> | {message.text}

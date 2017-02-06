@@ -1,8 +1,9 @@
 module.exports = (io, db) =>{
   return (socket) => {
     socket.on('message:new', (message) => {
-      db.get('messages').insert(message);
-      io.sockets.emit('message:new', message);
+      db.get('messages').insert(message).then((res) => {
+          io.sockets.emit('message:new', res);
+      });
     });
 
     socket.on('username:set', (username) => {

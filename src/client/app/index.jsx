@@ -14,10 +14,10 @@ class App extends React.Component {
       <div>
         <Grid>
           <Row>
-            <Col>
+            <Col className="header">
               <h2>prattle.js</h2>
             </Col>
-            <Col>
+            <Col className="content">
               <Chat />
             </Col>
           </Row>

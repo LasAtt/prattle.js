@@ -1,11 +1,36 @@
 textarea {
-  resize:none;
+  resize: none;
 }
 
-#chat {
-  margin-bottom: 0px;
-  max-height: 500px;
+.messageFormContainer {
+  height: 50px;
+}
+
+.messagebox {
+  resize: none;
   height: 100%;
+}
+
+.messagebutton {
+  height: 51px;
+}
+
+.header{
+  max-height: 10%;
+}
+
+.content{
+  max-height: 90%;
+}
+
+.chat {
+  margin-bottom: 0px;
+  max-height: 80%;
+}
+
+.messages {
+  margin-bottom: 0px;
+  bottom: 0;
 }
 
 #messageButton {

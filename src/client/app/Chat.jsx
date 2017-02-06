@@ -1,9 +1,12 @@
 import React from 'react';
 
+import cookie from 'react-cookie';
+
 import io from 'socket.io-client';
 let socket = io();
 
 import {ListGroup, ListGroupItem} from 'react-bootstrap';
+import ScrollArea from 'react-scrollbar';
 
 import MessageForm from './MessageForm.jsx';
 import UsernameForm from './UsernameForm.jsx';
@@ -15,7 +18,7 @@ class Chat extends React.Component {
 
     this.state = {
       username: '',
-      messages: []
+      messages: [],
     };
 
     this.handleNewMessage = this.handleNewMessage.bind(this);
@@ -26,23 +29,25 @@ class Chat extends React.Component {
   componentDidMount() {
     fetch('/api/messages/1').then((result) => {
       result.json().then((json) => {
-        console.log(json);
         this.setState({messages: json});
+        this.state.scrollarea.scrollBottom();
       });
     });
 
-    socket.on('init', this._initialize)
     socket.on('message:new', this.handleNewMessage);
     //socket.on('user:new', handleNewUser);
-  }
 
-  _initialize(data) {
-    var {users, name} = data;
-    this.setState({users, user: name});
+    this.state.username = cookie.load('username');
+    if (this.state.username) {
+      this.userform.close();
+      console.log(this.userform.state.showModal);
+    }
   }
 
   handleNewMessage(message) {
-    this.setState({messages: this.state.messages.concat([message])});
+    this.setState({messages: this.state.messages.concat([message])}, () => {
+      this.state.scrollarea.scrollBottom();
+    });
   }
 
   handleSendMessage(text) {
@@ -55,33 +60,40 @@ class Chat extends React.Component {
 
   handleUsernameForm(username) {
     this.setState(username);
+    cookie.save('username', username.username, {path: '/'})
     socket.emit('username:set', username)
   }
 
   render() {
-    return <div>
-      <UsernameForm
-        handleUsernameForm={this.handleUsernameForm}
-      />
+    return (
+      <div>
+        <UsernameForm
+          handleUsernameForm={this.handleUsernameForm}
+          ref={(ref) => this.userform = ref}
+        />
 
-    <div className="pre-scrollable" id="chat" style={{height: 400}}>
-        <ListGroup id="chat">
-          {
-            this.state.messages.map((message) => {
-              return (
-                <ListGroupItem key={message._id}>
-                  <b>{message.username}</b> | {message.text}
-                </ListGroupItem>
-              )
-            })
-          }
-        </ListGroup>
+        <ScrollArea
+          speed={0.8}
+          className="chat"
+          ref={(scrollarea) => {this.state.scrollarea = scrollarea}}
+        >
+          <ListGroup className="messages">
+            {
+              this.state.messages.map((message) => {
+                return (
+                  <ListGroupItem key={message._id}>
+                    <b>{message.username}</b> | {message.text}
+                  </ListGroupItem>
+                )
+              })
+            }
+          </ListGroup>
+        </ScrollArea>
+        <MessageForm
+          handleSendMessage={this.handleSendMessage}
+        />
       </div>
-
-      <MessageForm
-        handleSendMessage={this.handleSendMessage}
-      />
-    </div>
+    );
   }
 }
 

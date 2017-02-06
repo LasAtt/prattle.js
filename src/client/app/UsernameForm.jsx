@@ -7,9 +7,10 @@ class UsernameForm extends React.Component {
     super(props);
     this.state = {
       text: "",
-      showModal: true
+      showModal: false
     };
-    this.close = this.close.bind(this);
+
+    this.reopenIfNotReady = this.reopenIfNotReady.bind(this);
     this.open = this.open.bind(this);
     this.submitOnEnter = this.submitOnEnter.bind(this);
     this.submitUsername = this.submitUsername.bind(this);
@@ -18,6 +19,12 @@ class UsernameForm extends React.Component {
 
   close() {
     this.setState({showModal: false});
+  }
+
+  reopenIfNotReady() {
+    if (this.state.showModal) {
+      this.open();
+    }
   }
 
   open() {
@@ -33,7 +40,10 @@ class UsernameForm extends React.Component {
 
   submitUsername(e)  {
     e.preventDefault();
-    this.close();
+    if (this.state.text === '') {
+      return;
+    }
+    this.setState({showModal: false});
     this.props.handleUsernameForm({ username: this.state.text });
   }
 
@@ -44,16 +54,16 @@ class UsernameForm extends React.Component {
   render() {
     return (
       <div className="user-modal">
-        <Modal show={this.state.showModal} onHide={this.close}>
+        <Modal show={this.state.showModal} onHide={this.reopenIfNotReady}>
           <Modal.Header>
             <Modal.Title>Enter a username to chat</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form onSubmit={this.submitUsername.bind(this)}>
+            <Form onSubmit={this.submitUsername}>
                 <FormControl
                   type="text"
                   placeholder="Enter username"
-                  onChange={this.usernameChangeHandler.bind(this)}
+                  onChange={this.usernameChangeHandler}
                   onKeyUp={this.submitOnEnter}
                 />
             </Form>

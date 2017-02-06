@@ -729,10 +729,27 @@
       "from": "component-inherit@0.0.3",
       "resolved": "https://registry.npmjs.org/component-inherit/-/component-inherit-0.0.3.tgz"
     },
+    "computed-style": {
+      "version": "0.1.4",
+      "from": "computed-style@>=0.1.3 <0.2.0",
+      "resolved": "https://registry.npmjs.org/computed-style/-/computed-style-0.1.4.tgz"
+    },
     "concat-map": {
       "version": "0.0.1",
       "from": "concat-map@0.0.1",
       "resolved": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz"
+    },
+    "config": {
+      "version": "1.25.1",
+      "from": "config@>=1.24.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/config/-/config-1.25.1.tgz",
+      "dependencies": {
+        "json5": {
+          "version": "0.4.0",
+          "from": "json5@0.4.0",
+          "resolved": "https://registry.npmjs.org/json5/-/json5-0.4.0.tgz"
+        }
+      }
     },
     "console-browserify": {
       "version": "1.1.0",
@@ -768,6 +785,11 @@
       "version": "0.3.1",
       "from": "cookie@0.3.1",
       "resolved": "https://registry.npmjs.org/cookie/-/cookie-0.3.1.tgz"
+    },
+    "cookie-parser": {
+      "version": "1.4.3",
+      "from": "cookie-parser@latest",
+      "resolved": "https://registry.npmjs.org/cookie-parser/-/cookie-parser-1.4.3.tgz"
     },
     "cookie-signature": {
       "version": "1.0.6",
@@ -1495,6 +1517,11 @@
       "from": "lcid@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/lcid/-/lcid-1.0.0.tgz"
     },
+    "line-height": {
+      "version": "0.1.1",
+      "from": "line-height@>=0.1.1 <0.2.0",
+      "resolved": "https://registry.npmjs.org/line-height/-/line-height-0.1.1.tgz"
+    },
     "load-json-file": {
       "version": "1.1.0",
       "from": "load-json-file@>=1.0.0 <2.0.0",
@@ -1843,6 +1870,11 @@
       "version": "3.0.9",
       "from": "pbkdf2@>=3.0.3 <4.0.0",
       "resolved": "https://registry.npmjs.org/pbkdf2/-/pbkdf2-3.0.9.tgz"
+    },
+    "performance-now": {
+      "version": "0.2.0",
+      "from": "performance-now@>=0.2.0 <0.3.0",
+      "resolved": "https://registry.npmjs.org/performance-now/-/performance-now-0.2.0.tgz"
     },
     "pidusage": {
       "version": "1.1.1",
@@ -2206,6 +2238,11 @@
       "from": "querystring-es3@>=0.2.0 <0.3.0",
       "resolved": "https://registry.npmjs.org/querystring-es3/-/querystring-es3-0.2.1.tgz"
     },
+    "raf": {
+      "version": "3.3.0",
+      "from": "raf@>=3.1.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/raf/-/raf-3.3.0.tgz"
+    },
     "randomatic": {
       "version": "1.1.6",
       "from": "randomatic@>=1.1.3 <2.0.0",
@@ -2231,10 +2268,20 @@
       "from": "react-bootstrap@latest",
       "resolved": "https://registry.npmjs.org/react-bootstrap/-/react-bootstrap-0.30.7.tgz"
     },
+    "react-cookie": {
+      "version": "1.0.4",
+      "from": "react-cookie@latest",
+      "resolved": "https://registry.npmjs.org/react-cookie/-/react-cookie-1.0.4.tgz"
+    },
     "react-dom": {
       "version": "15.4.2",
       "from": "react-dom@latest",
       "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-15.4.2.tgz"
+    },
+    "react-motion": {
+      "version": "0.4.7",
+      "from": "react-motion@>=0.4.3 <0.5.0",
+      "resolved": "https://registry.npmjs.org/react-motion/-/react-motion-0.4.7.tgz"
     },
     "react-overlays": {
       "version": "0.6.10",
@@ -2245,6 +2292,11 @@
       "version": "0.4.0",
       "from": "react-prop-types@>=0.4.0 <0.5.0",
       "resolved": "https://registry.npmjs.org/react-prop-types/-/react-prop-types-0.4.0.tgz"
+    },
+    "react-scrollbar": {
+      "version": "0.5.1",
+      "from": "react-scrollbar@latest",
+      "resolved": "https://registry.npmjs.org/react-scrollbar/-/react-scrollbar-0.5.1.tgz"
     },
     "read-pkg": {
       "version": "1.1.0",

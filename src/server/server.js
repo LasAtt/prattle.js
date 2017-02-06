@@ -2,6 +2,9 @@ var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var cookieParser = require('cookie-parser');
+
+app.use(cookieParser);
 
 var path = require('path');
 

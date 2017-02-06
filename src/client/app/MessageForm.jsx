@@ -10,8 +10,16 @@ class MessageForm extends React.Component {
       text: ''
     };
 
+    this.submitOnEnter = this.submitOnEnter.bind(this);
     this.submitMessage = this.submitMessage.bind(this);
     this.updateMessage = this.updateMessage.bind(this);
+  }
+
+  submitOnEnter(e) {
+    e = e || event;
+    if (e.keyCode === 13) {
+      this.submitMessage(e);
+    }
   }
 
   submitMessage(e)  {
@@ -32,13 +40,15 @@ class MessageForm extends React.Component {
         <InputGroup>
             <FormControl
               componentClass="textarea"
+              className="textbox"
               placeholder="Enter message"
+              onKeyUp={this.submitOnEnter}
               onChange={this.updateMessage}
               ref={(input) => this.textArea = input}
               value={this.state.text}
             />
           <InputGroup.Button>
-            <Button type="submit" id="messageButton">Send</Button>
+            <Button type="submit" className="messagebutton" block>Send</Button>
           </InputGroup.Button>
         </InputGroup>
       </Form>
