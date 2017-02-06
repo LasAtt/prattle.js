@@ -16,6 +16,7 @@ var buildPath = express.static(path.resolve(__dirname, '../client/public'));
 var indexPath = path.resolve(__dirname, '../client/index.html');
 
 app.use((req, res, next) => {
+  console.log(req);
   req.db = db
   next();
 });
