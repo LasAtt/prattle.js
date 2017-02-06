@@ -9,5 +9,5 @@ RUN	npm install
 
 EXPOSE 3000
 
-CMD [ "npm", "build"]
+CMD [ "npm", "run" "build"]
 CMD	[ "node", "index.js" ]

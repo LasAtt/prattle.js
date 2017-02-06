@@ -5,8 +5,10 @@ import cookie from 'react-cookie';
 import io from 'socket.io-client';
 
 let hostname = window.location.hostname;
-let path = window.location.pathname;
-let socket = io(hostname + pathname);
+let pathname = window.location.pathname;
+let path = hostname + pathname;
+console.log(path);
+let socket = io(path);
 
 import {ListGroup, ListGroupItem} from 'react-bootstrap';
 import ScrollArea from 'react-scrollbar';
@@ -31,7 +33,7 @@ class Chat extends React.Component {
 
   componentDidMount() {
 
-    fetch(hostname + pathname + '/api/messages/1').then((result) => {
+    fetch(path + '/api/messages/1').then((result) => {
       result.json().then((json) => {
         this.setState({messages: json});
         this.state.scrollarea.scrollBottom();
@@ -44,7 +46,6 @@ class Chat extends React.Component {
     this.state.username = cookie.load('username');
     if (this.state.username) {
       this.userform.close();
-      console.log(this.userform.state.showModal);
     }
   }
 
