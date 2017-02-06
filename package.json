@@ -4,7 +4,8 @@
   "description": "Quick and simple web-chat application implemented with React.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "pm2 start index.js",
+    "stop": "pm2 stop index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack -d --watch",
     "build": "webpack -p"
@@ -33,9 +34,11 @@
     "express": "^4.14.1",
     "file-loader": "^0.10.0",
     "monk": "^3.1.4",
+    "pm2": "^2.3.0",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
+    "redux": "^3.6.0",
     "socket.io": "^1.7.2",
     "socket.io-client": "^1.7.2",
     "style-loader": "^0.13.1",

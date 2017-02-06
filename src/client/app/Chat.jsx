@@ -64,17 +64,19 @@ class Chat extends React.Component {
         handleUsernameForm={this.handleUsernameForm}
       />
 
-      <ListGroup id="chat">
-        {
-          this.state.messages.map((message) => {
-            return (
-              <ListGroupItem key={message._id}>
-                <b>{message.username}</b> | {message.text}
-              </ListGroupItem>
-            )
-          })
-        }
-      </ListGroup>
+    <div className="pre-scrollable" id="chat" style={{height: 400}}>
+        <ListGroup id="chat">
+          {
+            this.state.messages.map((message) => {
+              return (
+                <ListGroupItem key={message._id}>
+                  <b>{message.username}</b> | {message.text}
+                </ListGroupItem>
+              )
+            })
+          }
+        </ListGroup>
+      </div>
 
       <MessageForm
         handleSendMessage={this.handleSendMessage}

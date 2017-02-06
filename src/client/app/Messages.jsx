@@ -1,9 +1,4 @@
 import React from 'react';
-import {
-  ListGroup,
-  ListGroupItem,
-
-} from 'react-bootstrap';
 
 class Messages extends React.Component {
 
