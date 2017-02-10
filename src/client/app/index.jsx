@@ -6,7 +6,11 @@ import ReactDom from 'react-dom';
 
 import {Grid, Row, Col} from  'react-bootstrap';
 
-import Chat from './Chat.jsx';
+import Chat from './Chat/Chat.jsx';
+
+import { createStore } from 'redux'
+import messageApp from './reducers.jsx'
+let store = createStore(messageApp)
 
 class App extends React.Component {
   render () {
