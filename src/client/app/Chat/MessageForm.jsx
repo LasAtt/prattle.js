@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Form, InputGroup, ControlLabel, FormControl, Button} from 'react-bootstrap'
+import { Form, InputGroup, ControlLabel, FormControl, Button } from 'react-bootstrap'
 
 class MessageForm extends React.Component {
   constructor(props) {

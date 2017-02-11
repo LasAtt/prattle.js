@@ -8,8 +8,9 @@ import {Grid, Row, Col} from  'react-bootstrap';
 
 import Chat from './Chat/Chat.jsx';
 
+import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import messageApp from './reducers.jsx'
+import messageApp from './Chat/reducers/reducers.jsx'
 let store = createStore(messageApp)
 
 class App extends React.Component {
@@ -22,7 +23,9 @@ class App extends React.Component {
               <h2>prattle.js</h2>
             </Col>
             <Col className="content">
-              <Chat />
+              <Provider store={store}>
+                <Chat />
+              </Provider>
             </Col>
           </Row>
         </Grid>

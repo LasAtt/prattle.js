@@ -11,8 +11,7 @@ const MessageList = ({messages}) => {
           messages.map((message) =>
             <Message
               key={message._id}
-              username={message.username}
-              text={message.text}
+              {...message}
             />
           )
         }

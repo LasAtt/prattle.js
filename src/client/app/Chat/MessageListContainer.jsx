@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import MessageList from './MessageList'
+import MessageList from './MessageList.jsx'
 
 const getMessages = (messages, filter) => {
   switch(filter) {
@@ -9,9 +9,9 @@ const getMessages = (messages, filter) => {
 }
 
 const mapStateToProps = (state) => {
-  return (
+  return {
     messages: getMessages(state.messages, state.visibilityFilter)
-  )
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -26,3 +26,5 @@ const MessageListContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(MessageList)
+
+export default MessageListContainer

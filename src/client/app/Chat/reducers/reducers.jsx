@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { ADD_MESSAGE, VisibilityFilters } from './actions.jsx'
+import { ADD_MESSAGE, RECEIVE_MESSAGES, VisibilityFilters } from '../actions/index.jsx'
 const { SHOW_ALL } = VisibilityFilters
 
 function visibilityFilter(state = SHOW_ALL, action) {
@@ -21,6 +21,10 @@ function messages(state = [], action) {
             text: action.text
           }
         ]
+      })
+    case RECEIVE_MESSAGES:
+      return Object.assign({}, state, {
+        messages: action.messages
       })
     default:
       return state
