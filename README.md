@@ -1,7 +1,7 @@
 prattle.js
 ==========
 
-NodeJS webchat application. Current version is a basic realtime chat where you can choose an username. More features to come. Try the project out at https://serd.io/prattle
+NodeJS webchat application. Current version is a basic realtime chat where you can choose an username. More features to come.
 
 Technologies used
 -----------------
