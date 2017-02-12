@@ -14,8 +14,6 @@ import MessageList from './MessageList.jsx'
 import MessageForm from './MessageForm.jsx'
 import UsernameForm from './UsernameForm.jsx'
 
-import './store.jsx'
-
 class Chat extends React.Component {
 
   constructor(props) {
